@@ -1,0 +1,25 @@
+Vagrant.configure(2) do |config|
+
+  # Utilise Ubuntu 22.04 comme base
+  config.vm.box = "ubuntu/jammy64"
+
+  # Définit une seule machine nommée "agentbri"
+  config.vm.define "agentbri" do |cfg|
+    # Nom de la machine
+    cfg.vm.hostname = "agentbri"
+    
+    # Configure une IP réseau privée
+    cfg.vm.network "private_network", ip: "10.0.0.102"
+
+    # Configuration des ressources VirtualBox
+    cfg.vm.provider "virtualbox" do |v|
+      v.memory = 2048       # 2 Go de RAM
+      v.cpus = 2            # 2 processeurs
+    end
+
+    # Ajoute le script pour le logo
+    cfg.vm.provision :shell, path: "install_sabri.sh"
+  end
+
+end
+

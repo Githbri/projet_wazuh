@@ -1,0 +1,29 @@
+# Ignorer les fichiers et dossiers générés par Vagrant
+.vagrant/
+*.vdi
+
+# Ignorer les fichiers de logs ou temporaires
+*.log
+*.tmp
+
+# Ignorer les fichiers spécifiques à l'utilisateur
+.DS_Store
+Thumbs.db
+
+# Ignorer les scripts ou fichiers spécifiques au système d'exploitation
+*.swp
+*.bak
+*.old
+*.~*
+
+# Ignorer les fichiers de configuration sensibles
+*.key
+*.crt
+*.pem
+*.env
+
+# Ignorer les machines Vagrant spécifiques
+serverbri/disk.vdi
+agentbri/disk.vdi
+serverbri/.vagrant/
+agentbri/.vagrant/
